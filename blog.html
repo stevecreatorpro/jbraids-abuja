@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Care Blog | J-Braids Abuja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: var(--color-bg-secondary);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0 6rem;
+        }
+
+        .blog-card {
+            background: var(--color-bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-primary);
+        }
+
+        .blog-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-excerpt {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="blog.html" class="active">Blog</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1 class="section-title" style="margin-bottom: 1rem;">The J-Braids Journal</h1>
+            <p class="text-muted">Expert tips, styling inspiration, and hair care guides from Abuja's top rated stylists.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="blog-grid">
+            
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1616238356985-78e228d4ea51?auto=format&fit=crop&q=80&w=600" alt="Knotless Braids Guide" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-meta">Hair Care • 5 Min Read</span>
+                    <h3 class="blog-title">How Long Do Knotless Braids Actually Last?</h3>
+                    <p class="blog-excerpt">Everything you need to know about preparing for, maintaining, and safely removing your knotless box braids for maximum hair growth.</p>
+                    <a href="#" class="link-arrow">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1598286207863-718fa2bf9056?auto=format&fit=crop&q=80&w=600" alt="Locs Guide" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-meta">Locs • 4 Min Read</span>
+                    <h3 class="blog-title">Starter Locs 101: The Journey Begins</h3>
+                    <p class="blog-excerpt">Thinking about locking your hair? Here are the three most common mistake to avoid during the first 6 months of your loc journey.</p>
+                    <a href="#" class="link-arrow">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=600" alt="Protective Styles" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-meta">Styling • 3 Min Read</span>
+                    <h3 class="blog-title">Best Protective Styles for Abuja Weather</h3>
+                    <p class="blog-excerpt">The harmattan wind and dry heat can wreak havoc on natural hair. Discover the top 5 protective styles that look great and protect your ends.</p>
+                    <a href="#" class="link-arrow">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Service 24/7 | J-Braids Abuja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hs-hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(rgba(15,15,11,0.8), rgba(15,15,11,0.9)), url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=80') center/cover;
+            text-align: center;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .step-box {
+            background: var(--color-bg-secondary);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--color-primary);
+            color: var(--color-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .map-section {
+            background: var(--color-bg-tertiary);
+            padding: 4rem;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .zone-list li {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media(max-width: 768px) {
+            .map-section {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="home-service.html" class="active">Home Service</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hs-hero">
+        <div class="container" style="max-width: 700px;">
+            <span class="section-subtitle" style="color: var(--color-bg);">At Your Doorstep</span>
+            <h1 class="section-title">The Ultimate Luxury: <br>We Come To You.</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Skip the traffic and the salon noise. Experience our 5-star pain-free braiding in the comfort, privacy, and safety of your own home.</p>
+            <a href="booking.html" class="btn btn-primary">Book Home Service</a>
+        </div>
+    </section>
+
+    <div class="container section">
+        <div class="text-center">
+            <h2 class="section-title">How It Works</h2>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-box">
+                <div class="step-number">1</div>
+                <h3 style="margin-top: 1rem;">Book & Select Area</h3>
+                <p class="text-muted">Choose your service, select the 'Home Service' option on the booking form, and select your district in Abuja.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-number">2</div>
+                <h3 style="margin-top: 1rem;">We Prepare & Travel</h3>
+                <p class="text-muted">Our stylist arrives 10 minutes early with all professional tools, products, and sterilized equipment.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-number">3</div>
+                <h3 style="margin-top: 1rem;">Relax & Get Glam</h3>
+                <p class="text-muted">Set up a chair, put on your favorite show, and let us do the magic. No pain, just flawless results.</p>
+            </div>
+        </div>
+
+        <div class="map-section">
+            <div>
+                <h2>Coverage Areas & Travel Fees</h2>
+                <p class="text-muted" style="margin-bottom: 2rem;">Our salon is based in Wuse 2. Travel fees are calculated based on distance to cover transport and extra logistics.</p>
+                
+                <ul class="zone-list">
+                    <li>
+                        <strong>Zone 1: Wuse, Maitama, Central Area</strong>
+                        <span class="text-primary">+₦10,000</span>
+                    </li>
+                    <li>
+                        <strong>Zone 2: Garki, Asokoro, Jabi, Utako</strong>
+                        <span class="text-primary">+₦15,000</span>
+                    </li>
+                    <li>
+                        <strong>Zone 3: Gwarinpa, Life Camp, Dawaki</strong>
+                        <span class="text-primary">+₦15,000</span>
+                    </li>
+                    <li>
+                        <strong>Zone 4: Lugbe, Airport Road, Kubwa</strong>
+                        <span class="text-primary">+₦25,000</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <!-- Mock Map visual -->
+                <div style="background: rgba(197, 155, 118, 0.1); border: 1px dashed var(--color-primary); height: 400px; border-radius: 8px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 4rem; color: var(--color-primary); margin-bottom: 1rem;"></i>
+                    <p>Google Maps Integration Here</p>
+                    <p class="text-muted" style="font-size: 0.8rem;">(4 Lobito Crescent, Wuse 2)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

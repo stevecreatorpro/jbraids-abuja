@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | J-Braids Abuja</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .booking-hero {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+        }
+        
+        .booking-container {
+            max-width: 800px;
+            background: var(--color-bg-tertiary);
+            border: 1px solid rgba(197, 155, 118, 0.2);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 0 auto 5rem;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--color-primary);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        .booking-step {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .booking-step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: var(--color-bg-secondary);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--color-text);
+            border-radius: 4px;
+            font-family: var(--font-body);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .radio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .radio-card {
+            position: relative;
+        }
+
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-card label {
+            display: block;
+            padding: 1.5rem;
+            background: var(--color-bg-secondary);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .radio-card input:checked ~ label {
+            border-color: var(--color-primary);
+            background: rgba(197, 155, 118, 0.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .radio-card label strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .step-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+
+        #home-service-fields {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(197, 155, 118, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--color-primary);
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+        }
+        .success-message i {
+            font-size: 4rem;
+            color: var(--color-success);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="home-service.html">Home Service</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="booking-hero">
+        <div class="container">
+            <span class="section-subtitle">Secure Your Spot</span>
+            <h1 class="section-title" style="margin-bottom: 1rem;">Book Appointment</h1>
+            <p class="text-muted">No DMs required. Pain-free braiding is just a few clicks away.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="booking-container">
+            
+            <div id="booking-success" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h2>Booking Confirmed!</h2>
+                <p class="text-muted">Your appointment has been successfully booked. We've sent the details via SMS.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="index.html" class="btn btn-primary">Return Home</a>
+                </div>
+            </div>
+
+            <form id="booking-form">
+                <div class="progress-container">
+                    <div class="progress-bar" id="booking-progress"></div>
+                </div>
+
+                <!-- Step 1: Select Service -->
+                <div class="booking-step active">
+                    <h3>1. Select Service</h3>
+                    <p class="text-muted" style="margin-bottom: 2rem;">Choose your primary braiding service.</p>
+                    
+                    <div class="form-group">
+                        <select name="service" class="form-control" required>
+                            <option value="">-- Choose a Service --</option>
+                            <optgroup label="Braids">
+                                <option value="knotless_medium">Medium Knotless Braids</option>
+                                <option value="knotless_large">Large/Jumbo Knotless Braids</option>
+                                <option value="knotless_small">Small Knotless Braids</option>
+                                <option value="box_braids">Traditional Box Braids</option>
+                                <option value="ghana_weaving">Ghana Weaving / Stitch Braids</option>
+                            </optgroup>
+                            <optgroup label="Locs & Natural Hair">
+                                <option value="starter_locs">Starter Locs</option>
+                                <option value="loc_retwist">Loc Retwist & Styling</option>
+                                <option value="faux_locs">Bohemian Faux Locs</option>
+                            </optgroup>
+                            <optgroup label="Other Services">
+                                <option value="kids_braids">Kids Braiding (Under 12)</option>
+                                <option value="wig_revamp">Wig Revamp & Styling</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Length (For Braids/Locs)</label>
+                        <select name="length" class="form-control">
+                            <option value="shoulder">Shoulder Length</option>
+                            <option value="mid_back">Mid-Back Length (+₦5,000)</option>
+                            <option value="waist">Waist Length (+₦10,000)</option>
+                            <option value="knee">Knee Length (+₦20,000)</option>
+                        </select>
+                    </div>
+
+                    <div class="step-actions" style="justify-content: flex-end;">
+                        <button type="button" class="btn btn-primary next-step">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Location & Add-ons -->
+                <div class="booking-step">
+                    <h3>2. Location & Add-ons</h3>
+                    <p class="text-muted" style="margin-bottom: 2rem;">Where would you like to get styled?</p>
+                    
+                    <div class="form-group radio-grid">
+                        <div class="radio-card">
+                            <input type="radio" name="service_location" id="loc-salon" value="salon" checked>
+                            <label for="loc-salon">
+                                <strong><i class="fas fa-store"></i> In-Salon Visit</strong>
+                                <span class="text-muted" style="font-size: 0.9em;">4 Lobito Crescent, Wuse 2. Free WiFi, snacks.</span>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="service_location" id="loc-home" value="home">
+                            <label for="loc-home">
+                                <strong><i class="fas fa-home"></i> Home Service</strong>
+                                <span class="text-muted" style="font-size: 0.9em;">We come to you. Travel fee applies based on location.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="home-service-fields">
+                        <div class="form-group">
+                            <label>Abuja Area / District</label>
+                            <select name="home_area" class="form-control">
+                                <option value="wuse">Wuse / Maitama (+₦10,000 Travel Fee)</option>
+                                <option value="garki">Garki / Asokoro (+₦15,000 Travel Fee)</option>
+                                <option value="gwarinpa">Gwarinpa / Life Camp (+₦15,000 Travel Fee)</option>
+                                <option value="lugbe">Lugbe / Airport Road (+₦25,000 Travel Fee)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Full Address</label>
+                            <input type="text" name="home_address" class="form-control" placeholder="House 4, Street Name, Estate...">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <label>Do you need hair washing before braiding?</label>
+                        <select name="wash" class="form-control">
+                            <option value="no">No, I will arrive with freshly washed/blow-dried hair.</option>
+                            <option value="yes">Yes, add Wash & Conditioning (+₦5,000)</option>
+                        </select>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-outline prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-primary next-step">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Date & Time -->
+                <div class="booking-step">
+                    <h3>3. Pick Date & Time</h3>
+                    <p class="text-muted" style="margin-bottom: 2rem;">We are open 24/7. Select your preferred slot.</p>
+                    
+                    <div class="form-group">
+                        <label>Preferred Date</label>
+                        <input type="date" name="date" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Time (Note: Early Morning/Night slots may have a premium fee)</label>
+                        <input type="time" name="time" class="form-control" required>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-outline prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-primary next-step">Next Step <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Details & Confirm -->
+                <div class="booking-step">
+                    <h3>4. Your Details</h3>
+                    <p class="text-muted" style="margin-bottom: 2rem;">Almost done! Let us know who to expect.</p>
+                    
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" class="form-control" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label>WhatsApp Number (For Reminders)</label>
+                        <input type="tel" name="phone" class="form-control" required placeholder="+234 xxx xxxx">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" class="form-control" required placeholder="jane@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Any special requests? (E.g. Tender headed, bringing own extensions)</label>
+                        <textarea name="notes" class="form-control" rows="3" placeholder="Optional notes..."></textarea>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-outline prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn btn-primary">Confirm Booking <i class="fas fa-check"></i></button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

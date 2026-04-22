@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | J-Braids Abuja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portfolio-header {
+            padding: 120px 0 40px;
+            text-align: center;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            border-color: var(--color-primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 2rem 1rem 1rem;
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            bottom: 0;
+        }
+        
+        .overlay-content {
+            text-align: center;
+        }
+
+        .overlay-content h4 {
+            color: var(--color-primary-light);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="home-service.html">Home Service</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="portfolio-header">
+            <span class="section-subtitle">Lookbook</span>
+            <h1 class="section-title">Our Masterpieces</h1>
+            <p class="text-muted">Browse our gallery of perfect parts, flawless edges, and stunning transformations.</p>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Styles</button>
+            <button class="filter-btn" data-filter="knotless">Knotless</button>
+            <button class="filter-btn" data-filter="locs">Locs & Faux Locs</button>
+            <button class="filter-btn" data-filter="cornrows">Cornrows</button>
+            <button class="filter-btn" data-filter="kids">Kids</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery">
+            <!-- Simulated AI Image Placeholders / Unsplash proxies -->
+            
+            <div class="gallery-item" data-category="knotless">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/port_knotless_waist_1776666905046.png" alt="Long Knotless">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Waist Length Knotless</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="locs">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/port_loc_maintenance_1776666922620.png" alt="Loc Styling">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Loc Maintenance</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="knotless">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/port_ombre_knotless_1776666963653.png" alt="Ombre Braids">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Ombre Knotless</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="cornrows">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/hero_braids_1776664438275.png" alt="Stitch Braids">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Intricate Stitch Braids</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-category="kids">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/port_knotless_waist_1776666905046.png" alt="Kids Braids">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Kids Beaded Cornrows</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="locs">
+                <img src="file:///C:/Users/steve/.gemini/antigravity/brain/53e97025-912d-4bed-a485-b0efab1898b4/port_loc_maintenance_1776666922620.png" alt="Faux Locs">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <h4>Bohemian Faux Locs</h4>
+                        <a href="booking.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Book This Style</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

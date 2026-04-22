@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | J-Braids Abuja</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS <span style="color:var(--color-primary-light); font-size: 1rem; vertical-align: top;">ADMIN</span></a>
+            <nav class="nav-links">
+                <a href="index.html">View Site</a>
+                <a href="#" class="active">Dashboard</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container admin-container">
+        <div class="admin-header">
+            <div>
+                <span class="section-subtitle">Management Console</span>
+                <h2>Bookings Dashboard</h2>
+            </div>
+            <div>
+                <button id="refresh-btn" class="btn btn-outline"><i class="fas fa-sync-alt"></i> Refresh</button>
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <h4>Total Active</h4>
+                <div class="stat-value" id="stat-active">0</div>
+            </div>
+            <div class="stat-card">
+                <h4>Home Services</h4>
+                <div class="stat-value" id="stat-home">0</div>
+            </div>
+            <div class="stat-card">
+                <h4>Cancelled (Last 24h)</h4>
+                <div class="stat-value" id="stat-cancelled">0</div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="admin-table" id="bookings-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Client Details</th>
+                        <th>Service</th>
+                        <th>Total Cost</th>
+                        <th>Date & Time</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bookings-tbody">
+                    <!-- Javascript injected rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Reschedule Modal -->
+    <div class="modal-overlay" id="reschedule-modal">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 2rem;">Reschedule Booking #<span id="modal-booking-id"></span></h3>
+            
+            <form id="reschedule-form">
+                <input type="hidden" id="reschedule-id">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display:block; margin-bottom:0.5rem; color:var(--color-text-muted);">New Date</label>
+                    <input type="date" id="new-date" class="form-control" style="width:100%; padding:1rem; background:var(--color-bg); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:4px;" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label style="display:block; margin-bottom:0.5rem; color:var(--color-text-muted);">New Time</label>
+                    <input type="time" id="new-time" class="form-control" style="width:100%; padding:1rem; background:var(--color-bg); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:4px;" required>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button type="button" class="btn btn-outline" id="close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="cancel-modal">
+        <div class="modal-content">
+            <h3 style="margin-bottom: 1rem; color: #ff7675;"><i class="fas fa-exclamation-triangle"></i> Cancel Booking</h3>
+            <p class="text-muted" style="margin-bottom: 2rem;">Are you sure you want to cancel this booking? It will display as cancelled for 24 hours.</p>
+            
+            <input type="hidden" id="cancel-id">
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button type="button" class="btn btn-outline" id="close-cancel-btn">Go Back</button>
+                <button type="button" class="btn btn-primary" id="confirm-cancel-btn" style="background:#ff7675; color:white; border:none;">Yes, Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

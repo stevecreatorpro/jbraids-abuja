@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Menu & Pricing | J-Braids Abuja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .menu-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .menu-category {
+            margin-bottom: 5rem;
+        }
+
+        .menu-category h2 {
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .price-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 800px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            background: var(--color-bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .price-item:hover {
+            transform: translateX(10px);
+            background: var(--color-bg-tertiary);
+        }
+
+        .price-details h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .price-details p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .price-amount {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-primary-light);
+        }
+
+        .add-on-box {
+            background: rgba(197, 155, 118, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border: 1px dashed var(--color-primary);
+        }
+
+        .add-on-box h4 {
+            color: var(--color-primary);
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media(max-width: 768px) {
+            .split-layout { grid-template-columns: 1fr; }
+            .price-item { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="home-service.html">Home Service</a>
+                <a href="faq.html">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="menu-hero">
+        <div class="container">
+            <h1 class="section-title">Transparent Pricing</h1>
+            <p class="text-muted">No hidden fees. Just premium service. All times are approximate.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="split-layout">
+            <div>
+                <!-- Knotless -->
+                <div class="menu-category" id="knotless">
+                    <h2>Knotless Braids</h2>
+                    <p class="text-muted" style="margin-bottom: 1.5rem;">Our signature pain-free braids. Seamless start, undetectable roots.</p>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Small Knotless</h4>
+                                <p>Approx. 6 - 8 hours</p>
+                            </div>
+                            <div class="price-amount">₦35,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Medium Knotless</h4>
+                                <p>Approx. 4 - 6 hours</p>
+                            </div>
+                            <div class="price-amount">₦25,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Large / Jumbo Knotless</h4>
+                                <p>Approx. 3 - 4 hours</p>
+                            </div>
+                            <div class="price-amount">₦15,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locs -->
+                <div class="menu-category" id="locs">
+                    <h2>Locs & Faux Locs</h2>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Starter Locs (Coils/Two Strand)</h4>
+                                <p>Approx. 3 hours</p>
+                            </div>
+                            <div class="price-amount">₦20,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Loc Retwist & Standard Style</h4>
+                                <p>Approx. 2 hours</p>
+                            </div>
+                            <div class="price-amount">₦15,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Bohemian Faux Locs</h4>
+                                <p>Approx. 6 hours | Lightweight, messy look</p>
+                            </div>
+                            <div class="price-amount">₦40,000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <!-- Kids -->
+                <div class="menu-category" id="kids">
+                    <h2>Kids Braiding (Under 12)</h2>
+                    <p class="text-muted" style="margin-bottom: 1.5rem;">Gentle, fast, and tear-free. Includes beads.</p>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Kids Cornrows with Beads</h4>
+                                <p>Approx. 1.5 - 2 hours</p>
+                            </div>
+                            <div class="price-amount">₦12,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Kids Knotless / Box Braids</h4>
+                                <p>Approx. 3 - 4 hours</p>
+                            </div>
+                            <div class="price-amount">₦18,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wigs & Extras -->
+                <div class="menu-category" id="wigs">
+                    <h2>Wig Revamp & Extras</h2>
+                    <div class="price-list">
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Complete Wig Revamp</h4>
+                                <p>Washing, deep conditioning, restyling</p>
+                            </div>
+                            <div class="price-amount">₦15,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Wig Revamp + Color Correction</h4>
+                                <p>Includes custom dye matching</p>
+                            </div>
+                            <div class="price-amount">₦25,000</div>
+                        </div>
+                        <div class="price-item">
+                            <div class="price-details">
+                                <h4>Wash & Deep Condition</h4>
+                                <p>Pre-braid cleanup for natural hair</p>
+                            </div>
+                            <div class="price-amount">₦5,000</div>
+                        </div>
+                    </div>
+
+                    <div class="add-on-box">
+                        <h4>Length Add-Ons for Braids</h4>
+                        <ul style="color: var(--color-text-muted); margin-top: 1rem; line-height: 2;">
+                            <li>Mid-Back Length: +₦5,000</li>
+                            <li>Waist Length: +₦10,000</li>
+                            <li>Knee / Ankle Length: +₦20,000</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 4rem 0 8rem;">
+            <a href="booking.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 3rem;">Ready? Book Your Session</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

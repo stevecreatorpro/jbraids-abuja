@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ & Policies | J-Braids Abuja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .faq-item {
+            background: var(--color-bg-secondary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(197, 155, 118, 0.4);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: var(--color-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--color-text-muted);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px; /* Arbitrary large height for animation */
+        }
+
+        .policy-box {
+            background: rgba(218, 165, 32, 0.05); /* Accent tint */
+            border-left: 4px solid var(--color-accent);
+            padding: 2rem;
+            margin-top: 4rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .policy-box h3 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">J-BRAIDS<span>.</span></a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="home-service.html">Home Service</a>
+                <a href="faq.html" class="active">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="booking.html" class="btn btn-primary">Book Now</a>
+                <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="faq-hero">
+        <div class="container">
+            <h1 class="section-title">Common Questions</h1>
+            <p class="text-muted">Everything you need to know before your appointment.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is the "Pain-Free Guarantee" real? 
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! This is our strict policy. We do not grip your edges tightly, and our knotless method ensures zero tension on your scalp. You should be able to sleep comfortably on the very same day.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I need to wash my hair before I come?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We prefer you arrive with detangled, washed, and blown-out hair. However, if you'd like us to handle that, simply add the "Wash & Deep Condition" add-on when booking for just ₦5,000.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you provide the extensions/attachments?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our prices cover the workmanship only. We kindly ask clients to bring their preferred colour and brand of extensions to ensure complete satisfaction. We will text you exactly how many packs to bring after you book.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    How long do Knotless Braids typically last?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>With proper care, wrapping at night, and moisturizing your scalp, small to medium knotless braids can last 6 to 8 weeks beautifully.</p>
+                </div>
+            </div>
+
+            <!-- Cancellation Policy -->
+            <div class="policy-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> Cancellation & Late Policy</h3>
+                <p>We operate strictly on appointments to ensure no one waits. Please be respectful of our stylists' time.</p>
+                <ul style="margin-top: 1rem; margin-left: 1.5rem; color: var(--color-text-muted);">
+                    <li style="margin-bottom: 0.5rem;"><strong>Lateness:</strong> A grace period of 20 minutes is given. After 30 minutes, your appointment may be canceled or shortened.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Cancellation:</strong> Please cancel or reschedule at least 24 hours in advance using the link in your confirmation SMS.</li>
+                    <li><strong>No-Shows:</strong> Clients who no-show without notice will be required to pay a 50% non-refundable deposit for future bookings.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 J-Braids Abuja. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const parent = btn.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
